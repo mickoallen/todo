@@ -5,7 +5,6 @@ import com.mo.todo.model.Priority;
 import com.mo.todo.model.Todo;
 import com.mo.todo.service.TodoService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -18,7 +17,7 @@ public class TodoController {
     private TodoService todoService;
 
     @RequestMapping(value = "/get", method = RequestMethod.GET)
-    public @ResponseBody List<Todo> getTodo(@RequestParam(name = "priority", required=false, defaultValue="") String priority, Model model){
+    public @ResponseBody List<Todo> getTodo(@RequestParam(name = "priority", required=false, defaultValue="") String priority){
         Priority priorityStored;
         try {
             priorityStored = Priority.valueOf(priority.toUpperCase());
@@ -26,7 +25,6 @@ public class TodoController {
             priorityStored = Priority.ALL;
         }
         List<Todo> todos = todoService.getTodo(priorityStored);
-        model.addAttribute("todos", todos);
         return todos;
     }
 
