@@ -4,9 +4,9 @@
             <h1>mOOOOOO</h1>
             <h3>Shit to do</h3>
         </div>
-        <nav>
-            <router-link class="btn btn-primary" to="/">Todos</router-link>
-        </nav>
+        
+        <router-link to="/">Todos</router-link>
+        
         <br/>
         <router-view/>
     </div>
