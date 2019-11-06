@@ -5,7 +5,7 @@
             <ul>
                 <li v-for="(todo, index) in todos" :key="index">
                     <router-link :to="{
-                            name: 'customer-details',
+                            name: 'todos-details',
                             params: { chore: chore }
                         }">
                             {{todos.chore}}
@@ -26,7 +26,7 @@ export default {
   name: "todos-list",
   data() {
     return {
-      customers: []
+      todos: []
     };
   },
   methods: {

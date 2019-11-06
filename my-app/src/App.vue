@@ -5,9 +5,7 @@
             <h3>Shit to do</h3>
         </div>
         <nav>
-            <router-link class="btn btn-primary" to="/">Customers</router-link>
-            <router-link class="btn btn-primary" to="/add">Add</router-link>
-            <router-link class="btn btn-primary" to="/search">Search</router-link>
+            <router-link class="btn btn-primary" to="/">Todos</router-link>
         </nav>
         <br/>
         <router-view/>
