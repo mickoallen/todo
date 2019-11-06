@@ -7,6 +7,7 @@ import com.mo.todo.service.TodoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -24,8 +25,17 @@ public class TodoController {
         } catch(IllegalArgumentException e){
             priorityStored = Priority.ALL;
         }
-        List<Todo> todos = todoService.getTodo(priorityStored);
-        return todos;
+//        List<Todo> todos = todoService.getTodo(priorityStored);
+        List<Todo> list = new ArrayList<>();
+        Todo todo = new Todo();
+        todo.setChore("Your mom");
+        todo.setId(1);
+        Todo todo2 = new Todo();
+        todo2.setId(2);
+        todo2.setChore("Your mom again");
+        list.add(todo);
+        list.add(todo2);
+        return list;
     }
 
     @RequestMapping(value = "/add", method = RequestMethod.POST)
