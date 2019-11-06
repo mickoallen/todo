@@ -1,60 +1,36 @@
 <template>
-  <v-app>
-    <v-app-bar
-      app
-      color="primary"
-      dark
-    >
-      <div class="d-flex align-center">
-        <v-img
-          alt="Vuetify Logo"
-          class="shrink mr-2"
-          contain
-          src="https://pbs.twimg.com/media/DGCSACKUMAEKHb-.jpg"
-          transition="scale-transition"
-          width="40"
-        />
-
-        <v-img
-          alt="Vuetify Name"
-          class="shrink mt-1 hidden-sm-and-down"
-          contain
-          min-width="100"
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
-          width="100"
-        />
-      </div>
-
-      <v-spacer></v-spacer>
-
-      <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-        text
-      >
-        <span class="mr-2">Latest Release</span>
-        <v-icon>mdi-open-in-new</v-icon>
-      </v-btn>
-    </v-app-bar>
-
-    <v-content>
-      <HelloWorld/>
-    </v-content>
-  </v-app>
+    <div id="app" class="container-fluid">
+        <div class="site-info">
+            <h1>mOOOOOO</h1>
+            <h3>Shit to do</h3>
+        </div>
+        <nav>
+            <router-link class="btn btn-primary" to="/">Customers</router-link>
+            <router-link class="btn btn-primary" to="/add">Add</router-link>
+            <router-link class="btn btn-primary" to="/search">Search</router-link>
+        </nav>
+        <br/>
+        <router-view/>
+    </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld';
-
 export default {
-  name: 'App',
-
-  components: {
-    HelloWorld,
-  },
-
-  data: () => ({
-    //
-  }),
+  name: "app"
 };
 </script>
+
+<style>
+.site-info {
+  color: blue;
+  margin-bottom: 20px;
+}
+
+.btn-primary {
+  margin-right: 5px;
+}
+
+.container-fluid {
+  text-align: center;
+}
+</style>
