@@ -11,4 +11,5 @@ public interface TodoService {
     List<Todo> getFinishedAndPriority(boolean finished, Priority priority);
     List<Todo> getAllTodosforPriority(Priority priority);
     List<Todo> getAllTodos();
+    void removeAll();
 }

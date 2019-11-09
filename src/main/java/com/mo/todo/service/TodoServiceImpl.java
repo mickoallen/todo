@@ -47,4 +47,9 @@ public class TodoServiceImpl implements TodoService {
         }
         return todos;
     }
+
+    @Override
+    public void removeAll() {
+        todoRepository.deleteAll();
+    }
 }

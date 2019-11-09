@@ -35,6 +35,11 @@ public class TodoController {
         todoService.addTodo(todo);
     }
 
+    @RequestMapping(value = "/removeAll", method = RequestMethod.POST)
+    public void removeAllTodo() {
+        todoService.removeAll();
+    }
+
     @RequestMapping(value = "/alive", method = RequestMethod.GET)
     public @ResponseBody String health() {
        return "WE ARE ALIVE";

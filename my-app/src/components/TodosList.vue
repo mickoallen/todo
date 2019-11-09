@@ -46,6 +46,11 @@
                           <v-btn rounded color="primary" dark @click="addTodo">Add Chore</v-btn>
                         </div>
                       </v-col>
+                      <v-col cols="12" sm="6">
+                        <div class="text-center">
+                          <v-btn rounded color="error" dark @click="removeAll">DELETE ALL</v-btn>
+                        </div>
+                      </v-col>
                     </v-container>
                   </v-form>
             </v-col>
@@ -93,12 +98,18 @@ export default {
                       ).catch( error => {
                         console.log('error: ' + error);
                       });
-        }
+            },
+        removeAll() {
+            console.log("hahaaaa");
+             http.post("/removeAll")
+                            .catch(e => {
+                               console.log(e);
+              });
         },
         getPriority() {
             var selectedPriority = this.selectedPriority.toUpperCase();
             return selectedPriority.toUpperCase();
-    },
+    }},
     mounted() {
         this.retrieveTodos();
     }
