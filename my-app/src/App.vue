@@ -1,12 +1,11 @@
 <template>
+
     <div id="app" class="container-fluid">
         <div class="site-info">
             <h1>mOOOOOO</h1>
             <h3>Shit to do</h3>
         </div>
-        
-        <router-link to="/">Todos</router-link>
-        
+
         <br/>
         <router-view/>
     </div>

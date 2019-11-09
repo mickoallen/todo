@@ -9,4 +9,6 @@ public interface TodoService {
     List<Todo> getTodo(Priority priority);
     void addTodo(Todo todo);
     List<Todo> getFinishedAndPriority(boolean finished, Priority priority);
+    List<Todo> getAllTodosforPriority(Priority priority);
+    List<Todo> getAllTodos();
 }

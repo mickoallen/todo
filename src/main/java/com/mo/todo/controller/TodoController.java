@@ -21,21 +21,11 @@ public class TodoController {
     public @ResponseBody List<Todo> getTodo(@RequestParam(name = "priority", required=false, defaultValue="") String priority){
         Priority priorityStored;
         try {
-            priorityStored = Priority.valueOf(priority.toUpperCase());
+            priorityStored = Priority.valueOf(priority);
+            return todoService.getAllTodosforPriority(priorityStored);
         } catch(IllegalArgumentException e){
-            priorityStored = Priority.ALL;
+            return todoService.getAllTodos();
         }
-//        List<Todo> todos = todoService.getTodo(priorityStored);
-        List<Todo> list = new ArrayList<>();
-        Todo todo = new Todo();
-        todo.setChore("Your mom");
-        todo.setId(1);
-        Todo todo2 = new Todo();
-        todo2.setId(2);
-        todo2.setChore("Your mom again");
-        list.add(todo);
-        list.add(todo2);
-        return list;
     }
 
     @RequestMapping(value = "/add", method = RequestMethod.POST)
