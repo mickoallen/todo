@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "CREATE DBATABASE test;" > ./init.sql
+echo "CREATE DATABASE test;" > ./init.sql
 
 docker-compose stop && \
 docker-compose rm -f && \
