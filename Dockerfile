@@ -1,5 +1,4 @@
 FROM java:8-jdk
-ENV MYSQL_URL jdbc:mysql://localhost:3306/test
 EXPOSE 8080
 RUN mkdir -p /app/
 

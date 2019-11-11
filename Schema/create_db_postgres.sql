@@ -1,0 +1,5 @@
+CREATE TABLE IF NOT EXISTS test.test (
+    task_id INT AUTO_INCREMENT,
+    title VARCHAR(255) NOT NULL,
+    PRIMARY KEY (task_id)
+)  ENGINE=INNODB;
