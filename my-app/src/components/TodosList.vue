@@ -89,6 +89,12 @@ export default {
             this.retrieveTodos();
         },
         addTodo() {
+         var todoToAdd = {
+                             chore: this.todo,
+                             priority: this.selectedPriority,
+                             finished: false
+                         };
+         this.todos.push(todoToAdd);
             http.post('/add',
                             {
                                 chore: this.todo,
@@ -97,6 +103,7 @@ export default {
                             }
                       ).catch( error => {
                         console.log('error: ' + error);
+                        this.todos.pop();
                       });
             },
         removeAll() {
