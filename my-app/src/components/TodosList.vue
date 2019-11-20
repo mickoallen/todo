@@ -83,7 +83,7 @@ export default {
                 })
                 .catch(e => {
                     console.log(e);
-                });
+                }).finally(() => this.loading = false);
         },
         refreshList() {
             this.retrieveTodos();
@@ -100,6 +100,7 @@ export default {
                       });
             },
         removeAll() {
+            this.todos = [];
             console.log("hahaaaa");
              http.post("/removeAll")
                             .catch(e => {
