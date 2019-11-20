@@ -5,6 +5,6 @@ RUN mkdir -p /app/
 ADD build/libs/todo-0.0.1-SNAPSHOT.jar /app/todo-0.0.1-SNAPSHOT.jar
 ADD my-app/dist /app/my-app
 WORKDIR /app
-ENV JAVA_OPTS="-Xms256m -Xmx512m"
+ENV JAVA_TOOL_OPTIONS="-Xms256m -Xmx512m"
 
 ENTRYPOINT ["java", "-jar", "/app/todo-0.0.1-SNAPSHOT.jar"]
